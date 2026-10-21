@@ -1,0 +1,3 @@
+- insert:
+    - id: completion-alert
+      name: '@local/dsh-completion-alert'

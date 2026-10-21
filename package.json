@@ -1,0 +1,59 @@
+{
+  "name": "@local/dsh-completion-alert",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A customizable sound and a screen-level notification when a conversation task finishes, errors, or waits for your answer, reporting the failure reason in plain language.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WwNotVvvv/dsh-completion-alert.git"
+  },
+  "homepage": "https://github.com/WwNotVvvv/dsh-completion-alert#readme",
+  "bugs": {
+    "url": "https://github.com/WwNotVvvv/dsh-completion-alert/issues"
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node tests/audit.cjs && node tests/verify.cjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.2 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "tests/*.cjs"
+  ]
+}

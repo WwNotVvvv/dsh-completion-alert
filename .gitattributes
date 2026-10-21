@@ -1,0 +1,9 @@
+# Normalise line endings so a Windows checkout and a CI checkout produce the
+# same bytes; the tests compare rendered strings.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.tgz binary

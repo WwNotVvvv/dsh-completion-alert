@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Task Completion Alerts",
+    "description": "A customizable sound and a screen-level notification when a conversation finishes, fails, or waits for your answer. Failures are announced in plain language, and the reader follows the interface language."
+  }
+}

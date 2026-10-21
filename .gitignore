@@ -1,0 +1,21 @@
+# This package ships no runtime dependencies and needs no build step, so the
+# only reason this file exists is to keep a stray `npm install` or build from
+# leaving an untracked tree behind.
+node_modules/
+
+# `npm pack` output
+*.tgz
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local environment overrides
+.env
+.env.*

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      # Report every version, not just the first failure: a version-specific
+      # break is more useful visible than masked.
+      fail-fast: false
+      matrix:
+        node: ['20', '22']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # No dependency install step on purpose: the plugin has no dependencies
+      # and no build, and the tests use only Node's own modules. Keeping it that
+      # way means a contributor can run `npm test` on a clean checkout.
+      - name: Syntax check
+        run: node --check client.js
+
+      - name: Manifest is valid JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('package.json', 'utf8'))"
+
+      - name: Audit packaging metadata and locale parity
+        run: node tests/audit.cjs
+
+      - name: Behaviour tests
+        run: node tests/verify.cjs
