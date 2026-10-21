@@ -25,7 +25,7 @@ DSH 里用插件管理器安装（`install_bundle`），三种地址形式任选
 | 方式 | 填什么 |
 |---|---|
 | 本地目录 | 插件目录的**绝对路径**，或 `file:` / `link:` 前缀 |
-| Git 仓库 | `github:用户名/dsh-completion-alert` |
+| Git 仓库 | `github:WwNotVvvv/dsh-completion-alert`（本仓库） |
 | npm 包 | 包名，或 `包名@版本` |
 | 压缩包 | 绝对 `.tgz` 路径，或 `https://…tgz` |
 
@@ -112,16 +112,12 @@ locale/            插件列表显示用的标题与描述（DSH 读 en.json 的
 tests/             静态审计 + 行为测试
 ```
 
-### 发布到 GitHub 后
+### 仓库
 
-`package.json` 里还没有 `repository` 字段（创建仓库前无法确定 URL）。建好仓库后
-加一行，并保持与仓库名一致：
+<https://github.com/WwNotVvvv/dsh-completion-alert>
 
-```json
-"repository": { "type": "git", "url": "git+https://github.com/用户名/仓库名.git" }
-```
-
-装法随即变成：插件管理器里填 `github:用户名/仓库名`。
+`package.json` 的 `repository` / `homepage` / `bugs` 已指向该仓库，所以插件管理器里
+直接填 `github:WwNotVvvv/dsh-completion-alert` 即可安装。
 
 ## 许可证
 
