@@ -122,6 +122,9 @@ tests/             静态审计 + 行为测试
 `package.json` 的 `repository` / `homepage` / `bugs` 已指向该仓库，所以插件管理器里
 直接填 `github:WwNotVvvv/dsh-completion-alert` 即可安装。
 
+锁版本：加 `#v1.0.0`（见 [Releases](https://github.com/WwNotVvvv/dsh-completion-alert/releases)）。
+版本历史见 [CHANGELOG.md](./CHANGELOG.md)，发版流程见 [docs/RELEASING.md](./docs/RELEASING.md)。
+
 ## 许可证
 
 MIT，见 [LICENSE](./LICENSE)。
