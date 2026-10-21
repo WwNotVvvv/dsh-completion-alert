@@ -1,5 +1,8 @@
 # 任务完成提醒（dsh-completion-alert）
 
+[![CI](https://github.com/WwNotVvvv/dsh-completion-alert/actions/workflows/ci.yml/badge.svg)](https://github.com/WwNotVvvv/dsh-completion-alert/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 一个 DSH 插件：**对话任务结束时提醒你**——播放可自定义的提示音，并弹出系统级通知。
 
 关键在于它**能说出具体原因**。普通提醒只会告诉你"出错了"，而你往往要切回会话才知道错在哪；这个插件把会话里显示的那条错误信息取出来，念给你听。
